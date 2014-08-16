@@ -48,9 +48,9 @@ NON_SPIDERJOBS = ('', 'LICENSE', 'SERVICE', 'DEFAULT', 'SPIDER', 'LOGGING', 'ACT
 
 def CfgFile(keys_case_sensitive=False):
     """
-    CfgFile can store config, requires sections (appropriate for storing an entire cfg file)
+    CfgFile can store config, requires sections. Appropriate for storing an entire cfg file
     Delimiter is always '=', but lines without it are allowed; they become keys with no values
-    Case-insensitive keys by default (recommended if only reading from file), can be set otherwise
+    Case-insensitive keys by default (recommended when only reading from file). Can be set otherwise
     Create a CfgFile with: c = ime.CfgFile() or c = ime.CfgFile(keys_case_sensitive=True)
     """
     c = configparser.ConfigParser(delimiters=('='), default_section='', allow_no_value=True, interpolation=None)
@@ -108,7 +108,7 @@ def slice_cfg(cfg, start='', start_inc=True, end='', end_inc=True, skip=()):
     def add(cfg, key):
         cfgslice.update({ key: cfg[key] })
         
-    go = True if start is '' else False
+    go = start is ''
     
     for key in cfg:
         if same(key, start):

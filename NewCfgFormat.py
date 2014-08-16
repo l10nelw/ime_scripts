@@ -38,13 +38,14 @@ def end(e):
     sys.exit(e)
     
 def add_to_default(file):
-    # get the exact name of the default section to account for all case combinations (Default, DEFAULT, etc.)
-    i = ime.index('DEFAULT', file.sections())
+	"add config from ADD_TO_DEFAULT"
+    i = ime.index('DEFAULT', file.sections()) # get exact name of default section to account for all case combos (Default, DEFAULT, etc.)
     if i is not None: # if default section found
         file.read_string( ADD_TO_DEFAULT.format( file.sections()[i] ) )
     return file
 
 def convert_sections(file):
+	"make changes to each spiderjob"
     for sectionname in file:
         if sectionname.upper() in ime.NON_SPIDERJOBS: continue
         
