@@ -145,7 +145,7 @@ class ListFilter:
     A filtering tool that can be fed a list of links (data) and a wildcard pattern (filter) to filter the list
     Enter list in lf.data
     Display list with lf.list()
-    Optionally enter list seperator in lf.sep (default is newline character)
+    Optionally enter list separator in lf.sep (default is newline character)
     Filter and display list with lf.list(filter)
     
     e.g. >>> lf = ListFilter()
